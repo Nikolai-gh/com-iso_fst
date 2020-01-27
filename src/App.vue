@@ -6,38 +6,38 @@
             v-model="drawer"
     >
       <v-list>
-        <v-list-tile
+        <v-list-item
                 v-for="link in links"
                 :key ="link.title"
                 :to="link.url"
         >
-          <v-list-tile-action>
+          <v-list-item-icon>
             <v-icon>{{link.icon}}</v-icon>
-          </v-list-tile-action>
+          </v-list-item-icon>
 
-          <v-list-tile-content>
-            <v-list-tile-title v-text = "link.title"></v-list-tile-title>
-          </v-list-tile-content>
+          <v-list-item-content>
+            <v-list-item-title v-text = "link.title"></v-list-item-title>
+          </v-list-item-content>
 
-        </v-list-tile>
-        <v-list-tile
+        </v-list-item>
+        <v-list-item
           v-if="isUserLoggedIn"
           @click="onLogout"
         >
-          <v-list-tile-action>
+          <v-list-item-action>
             <v-icon>exit_to_app</v-icon>
-          </v-list-tile-action>
+          </v-list-item-action>
 
-          <v-list-tile-content>
-            <v-list-tile-title v-text = "'Выход'"></v-list-tile-title>
-          </v-list-tile-content>
+          <v-list-item-content>
+            <v-list-item-title v-text = "'Выход'"></v-list-item-title>
+          </v-list-item-content>
 
-        </v-list-tile>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar app light color="bar.class">
-      <v-toolbar-side-icon @click="drawer=!drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+    <v-app-bar app light color="bar.class">
+      <v-app-bar-nav-icon @click="drawer=!drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <router-link to="/" tag ="span" class = "pointer" >
           <img :src="`https://firebasestorage.googleapis.com/v0/b/com-iso.appspot.com/o/Izoterm.png?alt=media&token=1b01500c-c826-404e-a03e-81c1af8a07c0`"
@@ -51,20 +51,20 @@
                 v-for="link of links"
                 :key="link.title"
                 :to="link.url"
-                flat>
+                text>
           <v-icon left>{{link.icon}}</v-icon>
           {{link.title}}
         </v-btn>
         <v-btn
                 @click="onLogout"
-                flat
+                text
                 v-if="isUserLoggedIn"
         >
           <v-icon left>exit_to_app</v-icon>
           Выход
         </v-btn>
       </v-toolbar-items>
-    </v-toolbar>
+    </v-app-bar>
     <v-content>
         <router-view></router-view>
     </v-content>
@@ -79,7 +79,7 @@
       {{error}}
       <v-btn
               dark
-              flat
+              text
               @click="closeError"
       >
         Закрыть

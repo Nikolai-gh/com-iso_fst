@@ -150,9 +150,14 @@ export default ({
         characts (state) {
             return state.characts
         },
-         grcharacts (state) {
-             return state.characts //.filter(charact=>{ return  charact.gr=gr})
-        },
+        //  grcharacts (state) {
+        //      return state.characts //.filter(charact=>{ return  charact.gr=gr})
+        // },
+         gnByKod (state) {
+             return gnKod => {
+                 return state.characts.find(characts => characts.kod === gnKod)
+             }
+         }
     }
 
 })

@@ -8,7 +8,7 @@
                         sort-by="name"
                         class="elevation-1"
                 >
-                    <template v-slot:top>
+                     <template v-slot:top>
                         <v-toolbar flat color="blue" dark>
                             <!--class="hd"-->
                             <v-toolbar-title> Контрагенты</v-toolbar-title>
@@ -103,7 +103,7 @@
     export default {
         data () {
             return {
-                singleSelect: false,
+                // singleSelect: false,
                 dialog: false,
                 headers: [
                     {

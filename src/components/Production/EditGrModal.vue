@@ -1,6 +1,11 @@
 <template>
-    <v-dialog width="400px" v-model="modal">
-        <v-btn class="warning" flat slot="activator"> Изменить </v-btn>
+    <!--<v-dialog width="400px" v-model="modal">-->
+        <!--<v-btn class="warning" flat slot="activator"> Изменить </v-btn>-->
+    <v-row justify="center">
+        <v-dialog v-model="modal" persistent max-width="400">
+            <template v-slot:activator="{ on }">
+                <v-btn color="primary" dark v-on="on">Изменить</v-btn>
+            </template>
 
         <v-card>
             <v-container>
@@ -74,8 +79,8 @@
                     <v-flex sx12>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn class="warning" flat @click="onCancel"> Отменить </v-btn>
-                            <v-btn class="success" flat @click="onSave"> Сохранить </v-btn>
+                            <v-btn class="warning" text @click="onCancel"> Отменить </v-btn>
+                            <v-btn class="success" text @click="onSave"> Сохранить </v-btn>
                         </v-card-actions>
 
                     </v-flex>
@@ -83,6 +88,7 @@
             </v-container>
         </v-card>
     </v-dialog>
+    </v-row>
 </template>
 
 <script>
@@ -90,6 +96,7 @@
         props: ['gr'],
         data () {
             return{
+                // dialog:true,
                 modal: false,
                 valid: false,
                 image: null,
@@ -108,7 +115,7 @@
             onCancel () {
                 this.editedDescription = this.gr.description
                 this.editedName = this.gr.name
-                this.imageSrc = ''
+                // this.imageSrc = ''
                 this.modal = false
                 this.image = null
             },
@@ -132,8 +139,9 @@
                 const reader = new FileReader()
                 reader.onload = e => {
                     this.imageSrc = reader.result
-                }
-                reader.readAsDataURL(file)
+                    console.log(e)
+                 }
+                 reader.readAsDataURL(file)
                 this.image = file
             }
         }

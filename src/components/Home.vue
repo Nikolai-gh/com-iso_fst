@@ -47,7 +47,7 @@
 
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn flat :to="'/gr/'+gr.id" >Открыть</v-btn>
+                            <v-btn text :to="'/gr/'+gr.id" >Открыть</v-btn>
                             <app-buy-modal></app-buy-modal>
                         </v-card-actions>
                     </v-card>

@@ -1,7 +1,9 @@
 <template>
     <v-dialog width="400px" v-model="modal">
-        <v-btn class="primary" flat slot="activator"> Купить </v-btn>
-
+        <!--<v-btn class="primary" text slot="activator"> Купить </v-btn>-->
+        <template v-slot:activator="{ on }">
+            <v-btn color="primary" dark v-on="on"> Купить</v-btn>
+        </template>
         <v-card>
             <v-container>
                 <v-layout row>
@@ -39,12 +41,12 @@
                             <v-spacer></v-spacer>
                             <v-btn
                                     class="warning"
-                                    flat @click="onCancel"
+                                    text @click="onCancel"
                                     :disabled = "localLoading"
                             > Закрыть </v-btn>
                             <v-btn
                                     class="success"
-                                    flat
+                                    text
                                     @click="onSave"
                                     :disabled = "localLoading"
                                     :loading = "localLoading"
