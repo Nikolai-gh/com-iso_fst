@@ -130,7 +130,7 @@
                 const file = event.target.files[0]
                const reader = new FileReader()
                 reader.onload = e => {
-                    this.imageSrc = reader.result
+                    this.imageSrc = e.target.result
                 }
                 reader.readAsDataURL(file)
                 this.image = file
