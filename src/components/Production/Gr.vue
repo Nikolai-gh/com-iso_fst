@@ -5,11 +5,11 @@
                 <v-card v-if="!loading">
                     <v-img
                             :src="gr.imageSrc"
-                            height="600px"
+                            height="400px"
                     ></v-img>
                     <v-card-text>
                         <h1 class="text--primary"> {{gr.name}} </h1>
-                            <p> {{gr.description}} </p>
+                        <p> {{gr.description}} </p>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
@@ -33,7 +33,7 @@
         </v-layout>
 
     </v-container>
- </template>
+</template>
 
 <script>
 
@@ -58,7 +58,7 @@
             appEditGrModal: EditGrModal,
             appProduct: Product
         }
-     }
+    }
 </script>
 
 <style scoped>

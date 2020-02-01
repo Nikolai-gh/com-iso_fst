@@ -21,10 +21,10 @@
 
         </v-list-item>
         <v-list-item
-          v-if="isUserLoggedIn"
-          @click="onLogout"
         >
           <v-list-item-action>
+            v-if="isUserLoggedIn"
+            @click="onLogout"
             <v-icon>exit_to_app</v-icon>
           </v-list-item-action>
 
@@ -40,7 +40,7 @@
       <v-app-bar-nav-icon @click="drawer=!drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <router-link to="/" tag ="span" class = "pointer" >
-          <img :src="`https://firebasestorage.googleapis.com/v0/b/com-iso.appspot.com/o/Izoterm.png?alt=media&token=1b01500c-c826-404e-a03e-81c1af8a07c0`"
+          <img :src="`https://firebasestorage.googleapis.com/v0/b/com-iso.appspot.com/o/isoterm_log.png?alt=media&token=3802db38-86f8-4e24-a43c-a902052eeebf`"
                height="30"
           />
          </router-link>
