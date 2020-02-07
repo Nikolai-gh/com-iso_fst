@@ -180,7 +180,12 @@
         watch: {
             dialog (val) {
                 val || this.close()
+            },           editItem (item) {
+                this.editedIndex = this.orders.indexOf(item)
+                this.editedItem = Object.assign({}, item)
+                this.dialog = true
             },
+
         },
 
         created () {
@@ -217,11 +222,6 @@
                 ]
             },
 
-            editItem (item) {
-                this.editedIndex = this.orders.indexOf(item)
-                this.editedItem = Object.assign({}, item)
-                this.dialog = true
-            },
 
             plusItem (item) {
                 this.editedItem = Object.assign({}, item)

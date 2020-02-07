@@ -22,9 +22,14 @@
 <script>
 
     export default {
+        props: ['gr'],
         computed: {
             noms() {return this.$store.getters.noms},
-            characts() {return this.$store.getters.characts}
+            characts: function() {
+                const id = this.gr.id
+                return this.$store.getters.chById(id)
+                //return this.$store.getters.characts
+            }
         }
     }
 </script>

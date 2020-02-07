@@ -1,20 +1,25 @@
-
-export default ({
+export default {
     state: {
         noms: [
+            {
+                text: 'Код',
+                align: 'left',
+                value: 'kod',
+            },
             {
                 text: 'Тепловые приборы',
                 align: 'left',
                 value: 'name',
             },
-            { text: 'Цена', value: 'cena' },
-            { text: 'Длина', value: 'l' },
-            { text: 'Высота', value: 'h' },
-            { text: 'Глубина', value: 'b' },
-            { text: 'Цвет', value: 'col' },
-            { text: 'Соединение', value: 'con' },
-            { text: 'Описание', value: 'description' },
-            { text: 'Номенклатура', value: 'nom' },
+            {text: 'Цена', value: 'cena'},
+            {text: 'Длина', value: 'l'},
+            {text: 'Высота', value: 'h'},
+            {text: 'Глубина', value: 'b'},
+            {text: 'Цвет', value: 'col'},
+            {text: 'Соединение', value: 'con'},
+            // {text: 'Описание', value: 'description'},
+            {text: 'Номенклатура', value: 'nom'},
+            {text: 'Количество', value: 'kol'},
         ],
         characts: [
             {
@@ -27,7 +32,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКН',
-                gr: '124',
+                gr: '-LyPdZP8LRVlhkTLgmby',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -39,7 +45,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКН',
-                gr: '123',
+                gr: '-LyPdZP8LRVlhkTLgmby',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -51,7 +58,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКН',
-                gr: '123',
+                gr: '-Lywh526r7MJ7u_gdbbS',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -63,7 +71,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКНН',
-                gr: '125',
+                gr: '-Lywh526r7MJ7u_gdbbS',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -75,7 +84,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКНН',
-                gr: '123',
+                gr: '-LzBTGzqBN4Av-P3d2fF',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -87,7 +97,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКНН',
-                gr: '124',
+                gr: '-LzBTGzqBN4Av-P3d2fF',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -99,7 +110,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКНН',
-                gr: '123',
+                gr: '-LzC4tKI5Avra7HNm9Vj',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -111,7 +123,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКННД',
-                gr: '123',
+                gr: '-LzC4tKI5Avra7HNm9Vj',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -123,7 +136,8 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКННД',
-                gr: '125',
+                gr: '-LzBTGzqBN4Av-P3d2fF',
+                kol: 0,
             },
             {
                 kod: '000000125',
@@ -135,29 +149,25 @@ export default ({
                 col: '9016',
                 con: 'Левое',
                 nom: 'Изотерм РКННД',
-                gr: '125',
+                gr: '-LzBTGzqBN4Av-P3d2fF',
+                kol: 0,
             },
         ],
-     },
-    mutations: {
     },
-    actions: {
-     },
+    mutations: {},
+    actions: {},
     getters: {
-        noms (state) {
+        noms(state) {
             return state.noms
         },
-        characts (state) {
+        characts(state) {
             return state.characts
         },
-        //  grcharacts (state) {
-        //      return state.characts //.filter(charact=>{ return  charact.gr=gr})
-        // },
-         gnByKod (state) {
-             return gnKod => {
-                 return state.characts.find(characts => characts.kod === gnKod)
-             }
-         }
+        chById(state) {
+            return chId => {
+                return state.characts.filter(characts => characts.gr === chId)
+            }
+        }
     }
+}
 
-})

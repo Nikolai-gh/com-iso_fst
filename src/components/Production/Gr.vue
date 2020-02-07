@@ -18,7 +18,7 @@
                         <app-buy-modal :gr="gr"></app-buy-modal>
                     </v-card-actions>
                     <v-spacer></v-spacer>
-                    <app-product></app-product>
+                    <app-product :gr="gr"></app-product>
                 </v-card>
                 <div v-else class="text-xs-center">
                     <v-progress-circular
@@ -37,7 +37,7 @@
 
 <script>
 
-    import Product from './Product.vue'
+    import Products from './Products.vue'
     import EditGrModal from './EditGrModal.vue'
     export default {
         props: ['id'],
@@ -56,7 +56,7 @@
         },
         components: {
             appEditGrModal: EditGrModal,
-            appProduct: Product
+            appProduct: Products
         }
     }
 </script>
