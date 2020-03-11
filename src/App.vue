@@ -21,10 +21,10 @@
 
         </v-list-item>
         <v-list-item
-        >
-          <v-list-item-action>
             v-if="isUserLoggedIn"
             @click="onLogout"
+          >
+            <v-list-item-action>
             <v-icon>exit_to_app</v-icon>
           </v-list-item-action>
 
@@ -77,13 +77,15 @@
             :value="true"
     >
       {{error}}
-      <v-btn
-              dark
-              text
-              @click="closeError"
+      <v-list-item
+              v-if="isUserLoggedIn"
+              @click="onLogout"
       >
-        Закрыть
-      </v-btn>
+        <v-icon left>exit_to_app</v-icon>
+        <v-list-item-content>
+          <v-list-item-title v-text = "'Выход'"></v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
     </v-snackbar>
     </template>
     <v-footer app>
@@ -92,9 +94,6 @@
   </v-app></template>
 
 <script>
-
-
-
 
 export default {
     data () {
